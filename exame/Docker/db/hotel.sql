@@ -38,3 +38,14 @@ values ('Fernando', 543216598, 19356248, 'Rua:Fluter dockrs', 'São João da Boa
 insert into hospedes (nome, cpf, telefone, endereco, cidade)
 values ('José', 12345678, 87654321, 'Rua:Vallorant', 'São Paulo');
 
+insert into hospedes (nome, cpf, telefone, endereco, cidade)
+values ('Giovanny', 54632197, 98741536, 'Rua:Never Give Up', 'Campinas');
+
+update hospedes
+set cpf=123456789
+where nome='José';
+
+update hospedes
+set cpf=546321970
+where nome='Giovanny';
+
