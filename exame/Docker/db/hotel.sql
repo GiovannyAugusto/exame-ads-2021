@@ -22,4 +22,19 @@ categoriaBc varchar(90));
 insert into quartoCtego (categoriaL, categoriaP, categoriaBc)
 values ("Luxo", "Padrão", "Baixo Custo"));
 
+create table hospedes(
+nome varchar(250),
+cpf int,
+telefone int,
+endereco varchar(250),
+cidade varchar(100));
+
+insert into hospedes (nome, cpf, telefone, endereco, cidade)
+values ('Anderson', 548632181, 19485697, 'Rua:Patrulha Canina', 'Pirassununga');
+
+insert into hospedes (nome, cpf, telefone, endereco, cidade)
+values ('Fernando', 543216598, 19356248, 'Rua:Fluter dockrs', 'São João da Boa Vista');
+
+insert into hospedes (nome, cpf, telefone, endereco, cidade)
+values ('José', 12345678, 87654321, 'Rua:Vallorant', 'São Paulo');
 
