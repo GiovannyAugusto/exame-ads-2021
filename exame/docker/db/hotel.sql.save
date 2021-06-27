@@ -1,5 +1,5 @@
 create database ads;
-\connect ads;
+use ads;
 
 create table quartos(
 id int not null,
@@ -18,9 +18,8 @@ insert into quartos (id, categoria) values (9, 'Baixo custo');
 insert into quartos (id, categoria) values (10, 'Luxo');
 
 create table quartoCtego(
-categoriaL varchar(90),
-categoriaP varchar(90),
-categoriaBc varchar(90));
+categoria varchar(90),
+primary key (categoria));
 
 insert into quartoCtego (categoriaL, categoriaP, categoriaBc)
 values ("Luxo", "Padrão", "Baixo Custo"));
