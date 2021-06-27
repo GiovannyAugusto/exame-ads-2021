@@ -1,3 +1,6 @@
+create database ads;
+\connect ads;
+
 create table quartos(
 id int not null,
 categoria varchar(90),
@@ -48,4 +51,18 @@ where nome='José';
 update hospedes
 set cpf=546321970
 where nome='Giovanny';
+
+create table reservas(
+inicioReser timeStamp,
+fimReser timeStamp,
+quartoReser int,
+hospede varchar(250),
+foreign key (quartoReser)
+references quartos(id));
+
+insert into reservas (inicioReser, fimReser, quartoReser, hospede)
+values ('2022-09-18 06:30:00', '2022-09-20 18:00:00', 1, 'Anderson');
+
+insert into reservas (inicioReser, fimReser, quartoReser, hospede)
+values ('2022-08-17 06:30:00', '2022-08-18 18:00:00', 2, 'Giovanny');
 
