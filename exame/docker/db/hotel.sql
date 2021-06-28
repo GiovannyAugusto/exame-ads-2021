@@ -34,7 +34,7 @@ cpf int,
 telefone int,
 endereco varchar(250),
 cidade varchar(100)
-primary key (nome));
+primary key (cpf));
 
 insert into hospedes (nome, cpf, telefone, endereco, cidade)
 values ('Anderson', 548632181, 19485697, 'Rua:Patrulha Canina', 'Pirassununga');
@@ -60,15 +60,15 @@ create table reservas(
 inicioReser timeStamp,
 fimReser timeStamp,
 quartoReser int,
-hospede varchar(250),
+cpf int,
 foreign key (quartoReser)
 references quartos(id));
 
-insert into reservas (inicioReser, fimReser, quartoReser, hospede)
-values ('2021-02-10 12:00:00', '2021-02-11 11:59:00', 1, 'Anderson');
+insert into reservas (inicioReser, fimReser, quartoReser,cpf)
+values ('2021-02-10 12:00:00', '2021-02-11 11:59:00', 1, 548632181);
 
-insert into reservas (inicioReser, fimReser, quartoReser, hospede)
-values ('2021-02-10 12:00:00', '2021-02-12 11:59:00', 2, 'José');
+insert into reservas (inicioReser, fimReser, quartoReser, cpf)
+values ('2021-02-10 12:00:00', '2021-02-12 11:59:00', 2, 12345678);
 
 
 alter table quartos
@@ -76,5 +76,5 @@ add foreign key (categoria)
 references quartoCtego(categoria);
 
 alter table reservas
-add foreign key (hospede)
-references hospedes(nome);
+add foreign key (cpf)
+references hospedes(cpf);
